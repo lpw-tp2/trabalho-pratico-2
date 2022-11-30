@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-br" class="dark-mode">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/cadastrar.css">
     <link rel="stylesheet" href="css/dark-mode.css">
-    <script src="js/login.js" defer></script>
+    <script src="js/registrar.js" defer></script>
     <script src="js/main.js" defer></script>
-    <title>Login</title>
+    <title>Cadastre-se</title>
 </head>
+
 <body>
-    <h1 id="titulo">Entrar</h1>
-    <div class="box-erro-no sim">
-        <div>
-            <p>Usuario ou senha errados</p>
-        </div>
-    </div>
+    <h1 id="titulo">Cadastro</h1>
     <div class="box">
         <button class="container" aria-label="Toggle color mode" title="Toggle color mode">
             <div class="sun">
@@ -28,6 +25,12 @@
         </button>
         <div class="form">
             <div class="input-box">
+                <input type="text" required="required" class="inputNome">
+                <span>Nome</span>
+                <p class="erroNome erro"></p>
+                <i></i>
+            </div>
+            <div class="input-box">
                 <input type="text" required="required" class="inputNomeUsuario">
                 <span>Digite seu nome de usuario</span>
                 <p class="erroNomeUsuario erro"></p>
@@ -38,14 +41,15 @@
                 <img src="https://cdn-icons-png.flaticon.com/512/158/158746.png" class="btnOlho">
                 <span>Digite sua senha</span>
                 <p class="erroSenha erro"></p>
-                <i></i>  
+                <i></i>
             </div>
             <div class="links">
-                <a href="senha.html">Esqueceu sua senha?</a>
-                <a href="registrar.html">Registre-se</a>
+                <a href="index.html">Login</a>
             </div>
-            <input type="submit" value="Entrar" class="btnLogar">
+            <input value="Cadastrar" type="submit" class="btnEnviar">
         </div>
     </div>
+
 </body>
+
 </html>

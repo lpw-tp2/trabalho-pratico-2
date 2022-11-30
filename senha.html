@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="dark-mode">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/senha.css">
+    <script src="js/main.js" defer></script>
+    <script src="/js/senha.js" defer></script>
+    <title>Esqueceu a senha</title>
+</head>
+<body>
+    <h1 id="titulo">Redefinir a senha</h1>
+    <div class="box-erro-no sim">
+        <div>
+            <p>Usuario não encontrado</p>
+        </div>
+    </div>
+    <div class="box">
+        <button class="container" aria-label="Toggle color mode" title="Toggle color mode">
+            <div class="sun">
+            </div>
+            <div class="moon visible">
+                <div class="star"></div>
+                <div class="star small"></div>
+            </div>
+        </button>
+        <div class="form">
+            <div class="input-box">
+                <input type="text" required="required" class="inputNomeUsuario">
+                <span>Digite seu nome de usuario</span>
+                <p class="erroNomeUsuario erro"></p>
+                <i></i>
+            </div>
+            <div class="input-box">
+                <input type="password" required="required" class="inputSenha">
+                <img src="https://cdn-icons-png.flaticon.com/512/158/158746.png" class="btnOlho">
+                <span>Digite sua <strong>nova senha</strong></span>
+                <p class="erroSenha erro"></p>
+                <i></i>  
+            </div>
+            <div class="links">
+                <a href="beto.html">Tentar de outro jeito</a>
+            </div>
+            <input type="submit" value="Entrar" class="btnEntrar">
+        </div>
+    </div>
+</body>
+</html>

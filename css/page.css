@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --cor-principal: #333;
+    --cor-segundaria: #1c1c1c;
+    --cor-form: #28292d;
+    --cor-animacao: #45f3ff;
+    --cor-text: #b9b9b9;
+}
+
+.dark-mode:root {
+    --cor-principal: #fff;
+    --cor-segundaria: #ccc;
+    --cor-form: #ffe;
+    --cor-animacao: #630dc5;
+    --cor-text: #111;
+    --cor-input-text: #eef;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+    color: var(--cor-text);
+}
+
+body {
+    background-color: var(--cor-principal);
+    background-position: center;
+    background-size: cover;
+}
+
+.todo-container .ajuda {
+    background-color: #fdfdfd;
+    color: var(--cor-animacao);
+    border: 2px solid var(--cor-animacao);
+    border-radius: 4px;
+    padding: 0.3rem 0.6rem;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.todo-container .ajuda:hover {
+    background-color: var(--cor-animacao);
+}
+
+.todo-container .ajuda:hover>i {
+    color: var(--cor-form);
+}
+
+#titulo {
+    text-align: center;
+    font-size: 3em;
+    font-weight: 900;
+    color: var(--cor-animacao);
+    padding-top: 30px;
+}
+
+.todo-container .ajuda i {
+    pointer-events: none;
+    color: var(--cor-animacao);
+    font-weight: bold;
+}
+
+input,
+select {
+    background-color: transparent;
+    outline: none;
+    padding: 0.25rem 0.5rem;
+}
+
+input {
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px var(--cor-animacao) solid;
+}
+
+.hide {
+    display: none;
+}
+
+.box {
+    position: fixed;
+    left: 50%;
+    top: 10vh;
+    margin-top: 195px;
+    transform: translateX(-50%);
+    width: 381px;
+    height: 421px;
+    background-color: var(--cor-segundaria);
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -70%;
+    width: 450px;
+    height: 420px;
+    background: linear-gradient(0deg, transparent, var(--cor-animacao), var(--cor-animacao));
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    z-index: 0;
+}
+
+.box::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -70%;
+    width: 450px;
+    height: 420px;
+    background: linear-gradient(0deg, transparent, var(--cor-animacao), var(--cor-animacao));
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+    z-index: 0;
+}
+
+.todo-container {
+    position: fixed;
+    top: 20vh;
+    left: 50%;
+    margin: 50vh auto 0;
+    transform: translateX(-50%);
+    width: 378px;
+    height: 418px;
+    background-color: var(--cor-form);
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    border-radius: 8px;
+    z-index: 1;
+}
+
+.todo-container header {
+    text-align: center;
+    padding: 0 1rem 1rem;
+    border-bottom: 1px solid var(--cor-animacao);
+}
+
+#todo-form,
+#edit-form {
+    padding: 1rem;
+    border-bottom: 1px solid var(--cor-animacao);
+}
+
+#todo-form p,
+#edit-form p {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-control {
+    display: flex;
+}
+
+.form-control input {
+    margin-right: 0.3rem;
+}
+
+#cancel-edit-btn {
+    margin-top: 1rem;
+    color: #444;
+}
+
+#toolbar {
+    padding: 1rem;
+    border-bottom: 1px solid var(--cor-animacao);
+    display: flex;
+}
+
+#toolbar h4 {
+    margin-bottom: 0.5rem;
+}
+
+#search {
+    border-right: 1px solid var(--cor-animacao);
+    padding-right: 1rem;
+    margin-right: 1rem;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+}
+
+#search form {
+    display: flex;
+}
+
+#search input {
+    width: 100%;
+    margin-right: 0.3rem;
+}
+
+#filter {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+}
+
+#filter select {
+    border-radius: 4px;
+    border: 1px var(--cor-animacao) solid;
+    flex: 1;
+}
+
+option {
+    color: #111;
+}
+
+.todo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 1rem;
+    border-bottom: 1px solid var(--cor-animacao);
+    transition: 0.3s;
+    margin: 20px;
+}
+
+.todo h3 {
+    flex: 1;
+    font-size: 0.9rem;
+}
+
+.todo-container .ajuda {
+    background-color: transparent;
+}
+
+.todo .ajuda {
+    margin-left: 0.4rem;
+}
+
+#todo-list {
+    position: relative;
+    overflow: auto;
+    z-index: 0;
+    height: 45%;
+    padding: 2px;
+}
+
+.done {
+    background: #395169;
+}
+
+.done h3 {
+    color: #fff;
+    text-decoration: line-through;
+    font-style: italic;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
